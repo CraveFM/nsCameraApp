@@ -67,7 +67,7 @@ Add instance variables
     }
 ```
 
-```
+```typescript
     onTakePictureTap(args: EventData) {
         requestPermissions().then(
             () => this.capture(),
