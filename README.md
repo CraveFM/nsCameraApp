@@ -13,7 +13,7 @@ $ ns create nsCameraApp --template https://github.com/CraveFM/nsCameraApp
 ```
 
 
-## :a: From Scratch
+## :m: From Scratch
 
 * Create a blank NativeScript/Angular/sass project
 
@@ -23,5 +23,95 @@ $ ns create nsCameraApp --template https://github.com/CraveFM/nsCameraApp
 
 ## Configure
 
-##### :bangbang: Installing Angular CLI
+##### :bangbang: Installing Dependencies 
 
+```
+$ ns plugin add @nativescript/camera
+```
+
+```
+$ ns plugin add nativescript-permissions
+```
+
+## :a: Home Component
+
+Add instance variables
+
+```
+    public saveToGallery: boolean = true;
+    public cameraImage: ImageAsset;
+
+```
+
+```
+    capture() {
+        takePicture({ width: 250, height: 300, keepAspectRatio: true, saveToGallery: this.saveToGallery })
+            .then((imageAsset: any) => {
+                this.cameraImage = imageAsset;
+                imageAsset.getImageAsync(function (nativeImage) {
+                    let scale = 1;
+                    let height = 0;
+                    let width = 0;
+                    if (imageAsset.android) {
+                        // get the current density of the screen (dpi) and divide it by the default one to get the scale
+                        scale = nativeImage.getDensity() / imageAsset.android.util.DisplayMetrics.DENSITY_DEFAULT;
+                        height = imageAsset.options.height;
+                        width = imageAsset.options.width;
+                    } else {
+                        scale = nativeImage.scale;
+                        width = nativeImage.size.width * scale;
+                        height = nativeImage.size.height * scale;
+                    }
+                    console.log(`Displayed Size: ${width}x${height} with scale ${scale}`);
+                    console.log(`Image Size: ${width / scale}x${height / scale}`);
+                });
+            }, (error) => {
+                console.log("Error: " + error);
+            });
+    }
+```
+
+```
+    onTakePictureTap(args: EventData) {
+        requestPermissions().then(
+            () => this.capture(),
+            () => alert('permissions rejected')
+        );
+    }
+
+```
+
+- [ ] Styles
+
+```
+@Component({
+    selector: "Home",
+    templateUrl: "./home.component.html",
+    styleUrls: ["./home.component.css"]
+})
+```
+
+
+```
+Image {
+    border-width: 10;
+    border-color: red;
+}
+```
+
+- [ ] Template
+
+```
+<ActionBar class="action-bar">
+    <Label text="Camera"></Label>
+</ActionBar>
+
+<GridLayout rows="auto, *, auto">
+	<StackLayout orientation="horizontal" row="0" padding="10">
+		<Label text="saveToGallery"></Label>
+		<Switch [(ngModel)]="saveToGallery"></Switch>
+	</StackLayout>
+	<Image row="1" [src]="cameraImage" stretch="fill" margin="10"></Image>
+	<Button text="Take Picture" (tap)="onTakePictureTap($event)" row="2" padding="10"></Button>
+</GridLayout>
+```
