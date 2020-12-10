@@ -33,13 +33,13 @@ $ ns plugin add @nativescript/camera
 
 Add instance variables
 
-```
+```typescript
     public saveToGallery: boolean = true;
     public cameraImage: ImageAsset;
 
 ```
 
-```
+```typescript
     capture() {
         takePicture({ width: 250, height: 300, keepAspectRatio: true, saveToGallery: this.saveToGallery })
             .then((imageAsset: any) => {
@@ -79,7 +79,7 @@ Add instance variables
 
 - [ ] Styles
 
-```
+```typescript
 @Component({
     selector: "Home",
     templateUrl: "./home.component.html",
@@ -88,7 +88,7 @@ Add instance variables
 ```
 
 
-```
+```css
 Image {
     border-width: 10;
     border-color: red;
@@ -97,7 +97,7 @@ Image {
 
 - [ ] Template
 
-```
+```xml
 <ActionBar class="action-bar">
     <Label text="Camera"></Label>
 </ActionBar>
