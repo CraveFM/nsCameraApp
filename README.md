@@ -29,10 +29,6 @@ $ ns create nsCameraApp --template https://github.com/CraveFM/nsCameraApp
 $ ns plugin add @nativescript/camera
 ```
 
-```
-$ ns plugin add nativescript-permissions
-```
-
 ## :a: Home Component
 
 Add instance variables
