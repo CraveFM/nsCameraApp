@@ -111,3 +111,18 @@ Image {
 	<Button text="Take Picture" (tap)="onTakePictureTap($event)" row="2" padding="10"></Button>
 </GridLayout>
 ```
+
+## :o: Customization
+
+:iphone: Android
+
+Open up the manifest file `AndroidManifest.xml` (in `App_Resource/Android/src/main`) and add the following to the `<application>` parameter tag:
+
+:keyboard: Dans [VSC](https://code.visualstudio.com/) Ouvrir un fichier -> `Ctrl p` :computer: Windows -> `⌘ p` :apple: MacOS
+
+
+```xml
+	<application
+		...
+		android:requestLegacyExternalStorage="true">
+```
