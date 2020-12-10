@@ -118,11 +118,12 @@ Image {
 
 Open up the manifest file `AndroidManifest.xml` (in `App_Resource/Android/src/main`) and add the following to the `<application>` parameter tag:
 
-:keyboard: Dans [VSC](https://code.visualstudio.com/) Ouvrir un fichier -> `Ctrl p` :computer: Windows -> `⌘ p` :apple: MacOS
-
-
 ```xml
 	<application
 		...
 		android:requestLegacyExternalStorage="true">
 ```
+
+# References
+
+https://stackoverflow.com/questions/37819550/java-io-filenotfoundexception-storage-emulated-0-new-file-txt-open-failed-ea
