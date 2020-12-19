@@ -32,9 +32,9 @@ $ ns plugin add @nativescript/camera
 ## :a: Home Component
 
 
-- [ ] in the HomeComponent `Class`
+:round_pushpin: in the HomeComponent `Class`
 
-:round_pushpin: Add some instance variables that will be used later on
+- [ ] Add some instance variables that will be used later on
 
 ```typescript
     public saveToGallery: boolean = true;
@@ -42,7 +42,7 @@ $ ns plugin add @nativescript/camera
 
 ```
 
-:round_pushpin: Add the main `capture()` method that takes pictures.  `takePicture()`
+- [ ] Add the main `capture()` method that takes pictures.  `takePicture()`
 
 ```typescript
     capture() {
@@ -72,7 +72,7 @@ $ ns plugin add @nativescript/camera
     }
 ```
 
-:round_pushpin: Let's react when the `Take Picture` button is pressed by asking `Permissions` first
+- [ ] Let's react when the `Take Picture` button is pressed by asking `Permissions` first
 
 ```typescript
     onTakePictureTap(args: EventData) {
@@ -84,9 +84,9 @@ $ ns plugin add @nativescript/camera
 
 ```
 
-- [ ] Styles
+:round_pushpin: Styles
 
-:round_pushpin: Add the `styleUrls` operator to the `@Component` decorator
+- [ ] Add the `styleUrls` operator to the `@Component` decorator
 
 ```typescript
 @Component({
@@ -96,7 +96,7 @@ $ ns plugin add @nativescript/camera
 })
 ```
 
-:round_pushpin: In the `HomeComponent` stylesheet add the following `Image` body
+- [ ] In the `HomeComponent` stylesheet add the following `Image` body
 
 ```css
 Image {
@@ -105,9 +105,9 @@ Image {
 }
 ```
 
-- [ ] Template
+:round_pushpin: Template
 
-Let finish with the XML template
+- [ ] Let finish with the XML template
 
 ```xml
 <ActionBar class="action-bar">
