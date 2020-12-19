@@ -31,7 +31,6 @@ $ ns plugin add @nativescript/camera
 
 ## :a: Home Component
 
-
 :round_pushpin: in the HomeComponent `Class`
 
 - [ ] Add some instance variables that will be used later on
