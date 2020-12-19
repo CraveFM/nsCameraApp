@@ -108,11 +108,17 @@ Image {
 
 - [ ] Let finish with the XML template
 
+* replace the current `<ActionBar>`
+
 ```xml
 <ActionBar class="action-bar">
     <Label text="Camera"></Label>
 </ActionBar>
+```
 
+* replace the current `<GridLayout>` with a more sophisticated one
+
+```xml
 <GridLayout rows="auto, *, auto">
 	<StackLayout orientation="horizontal" row="0" padding="10">
 		<Label text="saveToGallery"></Label>
