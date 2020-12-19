@@ -21,7 +21,7 @@ $ ns create nsCameraApp --template https://github.com/CraveFM/nsCameraApp
 % ns create nsMusicPlayerUI --template @nativescript/template-blank-ng
 ```
 
-## Configure
+## :gear: Configure
 
 ##### :bangbang: Installing Dependencies 
 
