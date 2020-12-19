@@ -31,13 +31,18 @@ $ ns plugin add @nativescript/camera
 
 ## :a: Home Component
 
-Add instance variables
+
+- [ ] in the HomeComponent `Class`
+
+:round_pushpin: Add some instance variables that will be used later on
 
 ```typescript
     public saveToGallery: boolean = true;
     public cameraImage: ImageAsset;
 
 ```
+
+:round_pushpin: Add the main `capture()` method that takes pictures.  `takePicture()`
 
 ```typescript
     capture() {
@@ -67,6 +72,8 @@ Add instance variables
     }
 ```
 
+:round_pushpin: Let's react when the `Take Picture` button is pressed by asking `Permissions` first
+
 ```typescript
     onTakePictureTap(args: EventData) {
         requestPermissions().then(
@@ -79,6 +86,8 @@ Add instance variables
 
 - [ ] Styles
 
+:round_pushpin: Add the `styleUrls` operator to the `@Component` decorator
+
 ```typescript
 @Component({
     selector: "Home",
@@ -87,6 +96,7 @@ Add instance variables
 })
 ```
 
+:round_pushpin: In the `HomeComponent` stylesheet add the following `Image` body
 
 ```css
 Image {
@@ -96,6 +106,8 @@ Image {
 ```
 
 - [ ] Template
+
+Let finish with the XML template
 
 ```xml
 <ActionBar class="action-bar">
